@@ -1,0 +1,5 @@
+SEED = 23
+
+BATCH_SIZE = 32
+LR = 5e-4
+NUM_EPOCHES = 15

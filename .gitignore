@@ -127,3 +127,12 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Dataset
+
+CIFAR10/
+CIFAR100/
+
+# idea
+
+.idea/
