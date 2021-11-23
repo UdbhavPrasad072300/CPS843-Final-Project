@@ -20,7 +20,7 @@ print("Device being used: {}".format(DEVICE))
 if __name__ == "__main__":
     # Get Data Loaders
 
-    train_loader, val_loader, test_loader = get_dataloader("./data/CIFAR100/", config.BATCH_SIZE)
+    train_loader, val_loader, test_loader = get_dataloader("./data/CIFAR10/", config.BATCH_SIZE)
 
     print("Train Dataset Length: {}".format(len(train_loader)))
     print("Validation Dataset Length: {}".format(len(val_loader)))
@@ -61,9 +61,9 @@ if __name__ == "__main__":
 
     # Plot Train Stats
 
-    plot_sequential(loss_hist["train accuracy"], "Epoch", "Train Accuracy")
-    plot_sequential(loss_hist["train loss"], "Epoch", "Train Loss")
-    plot_sequential(loss_hist["val accuracy"], "Epoch", "Validation Accuracy")
+    plot_sequential(loss_hist["train accuracy"], "Train Accuracy", "Epoch", "Train Accuracy")
+    plot_sequential(loss_hist["train loss"], "Train Loss", "Epoch", "Train Loss")
+    plot_sequential(loss_hist["val accuracy"], "Validation Accuracy", "Epoch", "Validation Accuracy")
 
     # Save
 

@@ -23,8 +23,8 @@ def getTransform():
 
 
 def get_dataset(directory, transform):
-    train_set = datasets.CIFAR100(directory, download=True, train=True, transform=transform)
-    test_set = datasets.CIFAR100(directory, download=True, train=False, transform=transform)
+    train_set = datasets.CIFAR10(directory, download=True, train=True, transform=transform)
+    test_set = datasets.CIFAR10(directory, download=True, train=False, transform=transform)
 
     length = int(len(test_set) / 2)
 
