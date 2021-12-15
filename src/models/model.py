@@ -146,7 +146,9 @@ class ViT(nn.Module):
         self.norm = nn.LayerNorm(self.embed_size)
 
         self.classifier = nn.Sequential(
-            nn.Linear(self.embed_size, self.classes)
+            nn.Linear(self.embed_size, self.embed_size // 2),
+            nn.LeakyReLU(0.2),
+            nn.Linear(self.embed_size // 2, self.classes)
         )
 
     def forward(self, x, mask=None):
@@ -217,7 +219,9 @@ class DeiT(nn.Module):
             self.encoders.append(VisionEncoder(self.embed_size, self.num_heads, self.hidden_size, self.dropout))
 
         self.classifier = nn.Sequential(
-            nn.Linear(self.embed_size, self.classes)
+            nn.Linear(self.embed_size, self.embed_size // 2),
+            nn.LeakyReLU(0.2),
+            nn.Linear(self.embed_size // 2, self.classes)
         )
 
     def forward(self, x, mask=None):

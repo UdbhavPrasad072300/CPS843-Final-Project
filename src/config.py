@@ -1,5 +1,5 @@
 SEED = 23
 
 BATCH_SIZE = 2048
-LR = 1e-3
+LR = 1e-4
 NUM_EPOCHES = 20

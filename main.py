@@ -67,6 +67,6 @@ if __name__ == "__main__":
 
     # Save
 
-    torch.save(model.state_dict(), './trained_models/ViT_1.pt')
+    torch.save(model.state_dict(), './trained_models/ViT.pt')
 
     print("Program has Ended")

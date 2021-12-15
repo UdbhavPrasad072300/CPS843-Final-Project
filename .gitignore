@@ -136,3 +136,5 @@ CIFAR100/
 # idea
 
 .idea/
+*.pt
+*.pt
