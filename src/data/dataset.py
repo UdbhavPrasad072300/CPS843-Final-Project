@@ -13,8 +13,8 @@ def getTransform():
         [
             transforms.ToTensor(),
             #transforms.GaussianBlur(5),
-            #transforms.RandomHorizontalFlip(),
-            #transforms.RandomVerticalFlip(),
+            transforms.RandomHorizontalFlip(),
+            transforms.RandomVerticalFlip(),
             transforms.Normalize(mean, std)
         ]
     )

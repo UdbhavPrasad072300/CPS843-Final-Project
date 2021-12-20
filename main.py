@@ -7,6 +7,7 @@ import src.config as config
 from src.data.dataset import get_dataloader
 from src.models.model import ViT
 from src.models.train import train
+from src.models.test import test
 from src.visualization.visualize import plot_sequential
 
 torch.manual_seed(config.SEED)
@@ -68,5 +69,18 @@ if __name__ == "__main__":
     # Save
 
     torch.save(model.state_dict(), './trained_models/ViT.pt')
+
+    # Console Data
+
+    print(loss_hist["train accuracy"])
+    print(loss_hist["train loss"])
+    print(loss_hist["val accuracy"])
+
+    # Test accuracy
+
+    model.load_state_dict(torch.load('./trained_models/ViT.pt'))
+
+    # Test Accuracy%:  57.72 == 2886 / 5000
+    test(model, test_loader, DEVICE)
 
     print("Program has Ended")
